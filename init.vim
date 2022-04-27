@@ -31,7 +31,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'ryanoasis/vim-devicons'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'Valloric/YouCompleteMe'
+    Plug 'easymotion/vim-easymotion'
+"    Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 colorscheme dracula
@@ -53,7 +54,13 @@ let g:fzf_action = {
   \}
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_min_num_of_chars_for_completion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_min_num_of_chars_for_completion = 1
+"
+"let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'cpp', 'sql']
 
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'cpp', 'sql']
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+
+nmap ss <Plug>(easymotion-s2)
