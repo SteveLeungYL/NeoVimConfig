@@ -59,8 +59,15 @@ let g:fzf_action = {
 "
 "let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'cpp', 'sql']
 
+" Easy Motion Setup
+nmap ss <Plug>(easymotion-s2)
+let g:EasyMotion_smartcase = 1
+
+
+" My own shortcut settings. 
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-nmap ss <Plug>(easymotion-s2)
+" Create a command alias 'name' -> get current name to the clipboard
+command GetFileName let@+=expand('%')
