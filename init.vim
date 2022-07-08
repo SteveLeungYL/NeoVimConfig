@@ -32,7 +32,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
-    Plug 'numToStr/Comment.nvim'
+"    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
@@ -72,6 +72,3 @@ map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Create a command alias 'name' -> get current name to the clipboard
 command GetFileName let@+=expand('%')
-
-" Easy Comment
-lua require('Comment').setup()
