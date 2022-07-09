@@ -32,6 +32,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
+    Plug 'preservim/nerdcommenter'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
