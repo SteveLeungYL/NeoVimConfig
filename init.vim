@@ -46,7 +46,7 @@ let g:NERDTreeStatusline = ''
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
@@ -73,3 +73,5 @@ map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Create a command alias 'name' -> get current name to the clipboard
 command GetFileName let@+=expand('%')
+
+set ttimeoutlen=100
