@@ -33,6 +33,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'preservim/nerdcommenter'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-lua/completion-nvim'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -73,3 +75,5 @@ map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " Create a command alias 'name' -> get current name to the clipboard
 command GetFileName let@+=expand('%')
+
+lua require('init')
