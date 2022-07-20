@@ -35,6 +35,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'preservim/nerdcommenter'
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
+    Plug 'karb94/neoscroll.nvim'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -93,3 +94,7 @@ set shortmess+=c
 
 let g:completion_enable_auto_popup = 1
 imap <tab> <Plug>(completion_smart_tab)
+
+" For Smooth Scrolling
+lua require('neoscroll').setup()
+
