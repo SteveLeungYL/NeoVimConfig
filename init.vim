@@ -36,6 +36,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
     Plug 'karb94/neoscroll.nvim'
+    Plug 'lewis6991/spellsitter.nvim'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -98,3 +99,5 @@ imap <tab> <Plug>(completion_smart_tab)
 " For Smooth Scrolling
 lua require('neoscroll').setup()
 
+" Spell Checkers
+lua require('spellsitter').setup()
