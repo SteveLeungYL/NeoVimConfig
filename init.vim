@@ -37,6 +37,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'nvim-lua/completion-nvim'
     Plug 'karb94/neoscroll.nvim'
     Plug 'lewis6991/spellsitter.nvim'
+    Plug 'crispgm/nvim-tabline'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
@@ -101,3 +102,6 @@ lua require('neoscroll').setup()
 
 " Spell Checkers
 lua require('spellsitter').setup()
+
+" Vim Tab show Index
+lua require('tabline').setup({})
