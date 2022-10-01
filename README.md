@@ -3,6 +3,14 @@
 To utilize this NeoVIM configuration:
 
 1. Install `Neovim`.
+
+```bash
+# On Ubuntu
+sudo add-apt-repository ppa:neovim-ppa/stable -y
+sudo apt update -y
+sudo apt install neovim -y
+```
+
 2. Install the Vim-plug Plugin Manager:
 
 ```sh
