@@ -72,6 +72,7 @@ let g:EasyMotion_smartcase = 1
 
 
 " My own shortcut settings. 
+set splitright
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map ,s :vsplit <C-R>=expand("%:p:h") . "/" <CR>
