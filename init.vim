@@ -106,3 +106,5 @@ lua require('spellsitter').setup()
 
 " Vim Tab show Index
 lua require('tabline').setup({})
+
+set autoindent expandtab tabstop=2 shiftwidth=2
