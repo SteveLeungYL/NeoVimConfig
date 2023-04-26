@@ -38,6 +38,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'karb94/neoscroll.nvim'
     Plug 'lewis6991/spellsitter.nvim'
     Plug 'crispgm/nvim-tabline'
+    Plug 'simrat39/symbols-outline.nvim'
 "    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
 "    Plug 'Valloric/YouCompleteMe'
 call plug#end()
