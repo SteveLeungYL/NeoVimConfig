@@ -44,6 +44,25 @@ For `completion-nvim`, the current version might not work correctly. The fix is 
 From path `~/.vim/plugged/completion-nvim/lua/completion`:
 
 ```diff
+diff --git a/lua/completion/hover.lua b/lua/completion/hover.lua
+index 52bc439..7232873 100644
+--- a/lua/completion/hover.lua
++++ b/lua/completion/hover.lua
+@@ -355,10 +355,10 @@ M.autoOpenHoverInPopup = function()
+       else
+         local has_hover = false
+         for _, value in pairs(vim.lsp.buf_get_clients(0)) do
+-          if value.resolved_capabilities.hover then
+-            has_hover = true
+-            break
+-          end
++          --if value.resolved_capabilities.hover then
++            --has_hover = true
++            --break
++          --end
+         end
+         if not has_hover then return end
+         local row, col = unpack(api.nvim_win_get_cursor(0))
 diff --git a/lua/completion/signature_help.lua b/lua/completion/signature_help.lua
 index 061fecb..ddf186b 100644
 --- a/lua/completion/signature_help.lua
