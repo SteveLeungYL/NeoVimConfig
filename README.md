@@ -41,9 +41,53 @@ and then in the `nvim` command environment:
 
 For `completion-nvim`, the current version might not work correctly. The fix is shown below:
 
-The handler function's signature in `~/.vim/plugged/completion-nvim/lua/completion/source/lsp.lua` needs to be updated, possibly adding a backwards-compatible wrapper for neovim versions prior to this commit. As an intermediate hack, this should help:
+From path `~/.vim/plugged/completion-nvim/lua/completion`:
 
 ```diff
+diff --git a/lua/completion/hover.lua b/lua/completion/hover.lua
+index 52bc439..7232873 100644
+--- a/lua/completion/hover.lua
++++ b/lua/completion/hover.lua
+@@ -355,10 +355,10 @@ M.autoOpenHoverInPopup = function()
+       else
+         local has_hover = false
+         for _, value in pairs(vim.lsp.buf_get_clients(0)) do
+-          if value.resolved_capabilities.hover then
+-            has_hover = true
+-            break
+-          end
++          --if value.resolved_capabilities.hover then
++            --has_hover = true
++            --break
++          --end
+         end
+         if not has_hover then return end
+         local row, col = unpack(api.nvim_win_get_cursor(0))
+diff --git a/lua/completion/signature_help.lua b/lua/completion/signature_help.lua
+index 061fecb..ddf186b 100644
+--- a/lua/completion/signature_help.lua
++++ b/lua/completion/signature_help.lua
+@@ -15,8 +15,7 @@ M.autoOpenSignatureHelp = function()
+
+   local triggered
+   for _, value in pairs(vim.lsp.buf_get_clients(0)) do
+-    if value.resolved_capabilities.signature_help == false or
+-      value.server_capabilities.signatureHelpProvider == nil then
++    if value.server_capabilities.signatureHelpProvider == nil then
+       return
+     end
+
+diff --git a/lua/completion/source/lsp.lua b/lua/completion/source/lsp.lua
+index 0607ee4..b5746a3 100644
+--- a/lua/completion/source/lsp.lua
++++ b/lua/completion/source/lsp.lua
+@@ -146,7 +146,7 @@ M.triggerFunction = function(_, params)
+     M.callback = true
+     return
+   end
 -  vim.lsp.buf_request(params.bufnr, 'textDocument/completion', position_param, function(err, _, result)
 +  vim.lsp.buf_request(params.bufnr, 'textDocument/completion', position_param, function(err, result)
+     if err or not result then
+       M.callback = true
+       return
 ```
