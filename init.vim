@@ -38,9 +38,11 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'lewis6991/spellsitter.nvim'
 Plug 'crispgm/nvim-tabline'
 Plug 'simrat39/symbols-outline.nvim'
+" Auto Format
 Plug 'vim-autoformat/vim-autoformat'
+" Auto brace pairing
 Plug 'jiangmiao/auto-pairs'
-
+" Auto completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -49,8 +51,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.0.0', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
-
-
+" Git Line Signs.
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 

@@ -1,4 +1,5 @@
 require("symbols-outline").setup()
+require('gitsigns').setup()
 
 lspconfig = require "lspconfig"
 util = require "lspconfig/util"
