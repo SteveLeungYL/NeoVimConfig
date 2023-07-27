@@ -1,10 +1,10 @@
 set nocompatible            " disable compatibility to old-time vi
-set showmatch               " show matching 
-set ignorecase              " case insensitive 
-set mouse=v                 " middle-click paste with 
-set hlsearch                " highlight search 
+set showmatch               " show matching
+set ignorecase              " case insensitive
+set mouse=v                 " middle-click paste with
+set hlsearch                " highlight search
 set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab 
+set tabstop=4               " number of columns occupied by a tab
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
@@ -25,22 +25,33 @@ set spell                 " enable spell check (may need to download language pa
 
 
 call plug#begin("~/.vim/plugged")
- " Plugin Section
-    Plug 'dracula/vim'
-    Plug 'scrooloose/nerdtree'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-    Plug 'easymotion/vim-easymotion'
-    Plug 'preservim/nerdcommenter'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
-    Plug 'karb94/neoscroll.nvim'
-    Plug 'lewis6991/spellsitter.nvim'
-    Plug 'crispgm/nvim-tabline'
-    Plug 'simrat39/symbols-outline.nvim'
-"    Plug 'numToStr/Comment.nvim', {'tag': 'v0.6'}
-"    Plug 'Valloric/YouCompleteMe'
+" Plugin Section
+Plug 'dracula/vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdcommenter'
+Plug 'neovim/nvim-lspconfig'
+Plug 'karb94/neoscroll.nvim'
+Plug 'lewis6991/spellsitter.nvim'
+Plug 'crispgm/nvim-tabline'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'vim-autoformat/vim-autoformat'
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.0.0', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+
+
+
 call plug#end()
 
 colorscheme dracula
@@ -56,10 +67,10 @@ nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \}
 
 " YouCompleteMe
 "let g:ycm_autoclose_preview_window_after_completion = 1
@@ -72,7 +83,7 @@ nmap ss <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
 
 
-" My own shortcut settings. 
+" My own shortcut settings.
 set splitright
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
@@ -91,13 +102,10 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+"set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
-
-let g:completion_enable_auto_popup = 1
-imap <tab> <Plug>(completion_smart_tab)
 
 " For Smooth Scrolling
 lua require('neoscroll').setup()
@@ -111,3 +119,13 @@ lua require('tabline').setup({})
 set autoindent expandtab tabstop=2 shiftwidth=2
 
 cnoreabbrev sout SymbolsOutline
+
+let g:python3_host_prog="/usr/bin/python3"
+au BufWrite * :Autoformat
+
+let g:autoformat_autoindent=0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 1
+let g:autoformat_verbosemode=0
+
+
