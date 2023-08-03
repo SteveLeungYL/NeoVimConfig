@@ -29,7 +29,8 @@ imap <F1> <Esc>
 
 call plug#begin("~/.vim/plugged")
 " Plugin Section
-Plug 'dracula/vim'
+" Color Theme
+Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
@@ -66,7 +67,12 @@ call plug#end()
 
 set mouse+=a
 
-colorscheme dracula
+" Color Theme setting related
+syntax      enable
+syntax      on
+set         t_Co=256
+" let g:hardhacker_darker = 1
+colorscheme hardhacker
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -76,12 +82,6 @@ let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
-
-" YouCompleteMe
-"let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_min_num_of_chars_for_completion = 1
-"
-"let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'cpp', 'sql']
 
 " Easy Motion Setup
 nmap ss <Plug>(easymotion-s2)
