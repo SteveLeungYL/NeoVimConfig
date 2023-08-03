@@ -32,14 +32,11 @@ call plug#begin("~/.vim/plugged")
 Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdcommenter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'karb94/neoscroll.nvim'
 Plug 'lewis6991/spellsitter.nvim'
-Plug 'crispgm/nvim-tabline'
 Plug 'simrat39/symbols-outline.nvim'
 " Auto Format
 Plug 'vim-autoformat/vim-autoformat'
@@ -56,8 +53,18 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.0.0', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
 " Git Line Signs.
 Plug 'lewis6991/gitsigns.nvim'
+" Better Tab support
+Plug 'lewis6991/gitsigns.nvim' " OPTIONAL: for git status
+Plug 'nvim-tree/nvim-web-devicons' " OPTIONAL: for file icons
+Plug 'romgrk/barbar.nvim'
+
+" Better Fuzzy Search
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 call plug#end()
+
+set mouse+=a
 
 colorscheme dracula
 
@@ -69,13 +76,6 @@ let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
-
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
-      \}
 
 " YouCompleteMe
 "let g:ycm_autoclose_preview_window_after_completion = 1
@@ -118,9 +118,6 @@ lua require('neoscroll').setup()
 " Spell Checkers
 lua require('spellsitter').setup()
 
-" Vim Tab show Index
-lua require('tabline').setup({})
-
 set autoindent expandtab tabstop=2 shiftwidth=2
 
 cnoreabbrev sout SymbolsOutline
@@ -132,5 +129,4 @@ let g:autoformat_autoindent=0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 1
 let g:autoformat_verbosemode=0
-
 

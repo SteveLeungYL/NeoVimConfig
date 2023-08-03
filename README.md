@@ -17,7 +17,7 @@ sudo apt install neovim -y
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-3. Git Clone this repo. 
+3. Git Clone this repo.
 ```sh
 cd ~/.config
 git clone git@github.com:SteveLeungYL/NeoVimConfig.git
@@ -36,6 +36,12 @@ and then in the `nvim` command environment:
 ```
 
 5. Relaunch `Neovim`. All installation succeed.
+
+6. Install Command Line dependencies:
+
+```bash
+sudo apt-get install ripgrep
+```
 
 ### Issues:
 

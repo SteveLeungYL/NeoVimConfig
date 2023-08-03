@@ -1,3 +1,7 @@
+-- Using Space as the Leader key.
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = " "
+
 require("symbols-outline").setup()
 require('gitsigns').setup()
 
@@ -89,3 +93,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require'lspconfig'.pyright.setup{capabilities = capabilities}
 require'lspconfig'.clangd.setup{capabilities = capabilities}
 require'lspconfig'.gopls.setup{capabilities = capabilities}
+
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
