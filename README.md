@@ -40,7 +40,9 @@ and then in the `nvim` command environment:
 6. Install Command Line dependencies:
 
 ```bash
-sudo apt-get install ripgrep
+sudo apt-get install ripgrep clangd-12 
+# And with golang configured:
+go get golang.org/x/tools/gopls@latest
 ```
 
 ### Issues:
