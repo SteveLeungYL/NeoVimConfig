@@ -103,7 +103,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
--- Barbar tag setup. Disable the icon showing. 
+-- Barbar tag setup. Disable the icon showing.
 require("barbar").setup {
   focus_on_close = "previous",
   icons = {
@@ -113,3 +113,8 @@ require("barbar").setup {
     },
   },
 }
+
+-- For server clipboard.
+vim.keymap.set('n', '<leader>C', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>CC', '<leader>c_', {remap = true})
+vim.keymap.set('v', '<leader>C', require('osc52').copy_visual)

@@ -63,6 +63,9 @@ Plug 'romgrk/barbar.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
+" For server clipboard sharing.
+Plug 'ojroques/nvim-osc52'
+
 call plug#end()
 
 set mouse+=a
