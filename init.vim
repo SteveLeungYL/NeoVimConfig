@@ -66,6 +66,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 " For server clipboard sharing.
 Plug 'ojroques/nvim-osc52'
 
+" For Tmux embedding
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 set mouse+=a
