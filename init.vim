@@ -69,6 +69,10 @@ Plug 'ojroques/nvim-osc52'
 " For Tmux embedding
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'sindrets/diffview.nvim'
+
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 set mouse+=a
@@ -136,3 +140,22 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 1
 let g:autoformat_verbosemode=0
 
+" vimtex related
+let g:tex_flavor = 'latex'
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note that most plugin managers will do this automatically.
+filetype plugin indent on
+
+" This enables Vim's and neovim's syntax-related features. Without this, some
+" VimTeX features will not work (see ":help vimtex-requirements" for more
+" info).
+syntax enable
+
+let g:vimtex_view_method = 'skim' " Choose which program to use to view PDF file
+let g:vimtex_view_skim_sync = 1 " Value 1 allows forward search after every successful compilation
+let g:vimtex_view_skim_activate = 1 " Value 1 allows change focus to skim after command `:VimtexView` is given
+
+" Avoid Active error window popping up.
+let g:vimtex_quickfix_mode = 0
+
+" Setup Skim: Sync-> PDF-Tex Sync Support -> Custom -> nvim -> --headless -c "VimtexInverseSearch %line '%file'"
