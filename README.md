@@ -9,6 +9,7 @@ To utilize this NeoVIM configuration:
 sudo add-apt-repository ppa:neovim-ppa/stable -y
 sudo apt update -y
 sudo apt install neovim -y
+sudo apt install ripgrep -y
 ```
 
 2. Install the Vim-plug Plugin Manager:
@@ -40,7 +41,7 @@ and then in the `nvim` command environment:
 6. Install Command Line dependencies:
 
 ```bash
-sudo apt-get install ripgrep clangd-12 
+sudo apt-get install ripgrep clangd-12
 # And with golang configured:
 go get golang.org/x/tools/gopls@latest
 ```
