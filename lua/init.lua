@@ -118,3 +118,7 @@ require("barbar").setup {
 vim.keymap.set('n', '<leader>C', require('osc52').copy_operator, {expr = true})
 vim.keymap.set('n', '<leader>CC', '<leader>c_', {remap = true})
 vim.keymap.set('v', '<leader>C', require('osc52').copy_visual)
+
+-- Which key, key mapping hints. Not working perfectly, can hint some keys, but not all.
+local wk = require("which-key")
+wk.register(mappings, opts)

@@ -73,6 +73,9 @@ Plug 'sindrets/diffview.nvim'
 
 Plug 'lervag/vimtex'
 
+" Show key map hints
+Plug 'folke/which-key.nvim'
+
 call plug#end()
 
 set mouse+=a
