@@ -76,6 +76,12 @@ Plug 'lervag/vimtex'
 " Show key map hints
 Plug 'folke/which-key.nvim'
 
+" auto close brackets
+Plug 'm4xshen/autoclose.nvim'
+
+" smarter word motion
+Plug 'https://github.com/chaoren/vim-wordmotion'
+
 call plug#end()
 
 set mouse+=a
