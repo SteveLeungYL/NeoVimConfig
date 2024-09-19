@@ -6,7 +6,8 @@ To utilize this NeoVIM configuration:
 
 ```bash
 # On Ubuntu
-sudo add-apt-repository ppa:neovim-ppa/stable -y
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update -y
 sudo apt install neovim -y
 sudo apt install ripgrep -y
